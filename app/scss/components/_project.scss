@@ -1,0 +1,185 @@
+.project {
+    margin-bottom: 50px;
+    &__inner {
+        display: flex;
+        @include max($md) {
+            flex-direction: column;
+            align-items: center;
+        }  
+    }
+    &__items {
+        max-width: 50%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include max($md) {
+            max-width: 100%;
+            margin-bottom: 25px;
+        }  
+    }
+    &__title {
+        position: relative;
+        margin-bottom: 55px;
+        max-width: 430px;
+        width: 100%;
+        &::after {
+            position: absolute;
+            content: '';
+            background-image: url(../images/project-decor.png);
+            @include bg;
+            width: 237px;
+            height: 154px;
+            bottom: -40px;
+            right: -60px;
+            z-index: -1;
+            @include max($lg) {
+                bottom: -82px;
+                right: -27px;
+            }  
+            @include max($sm) {
+                display: none;
+            }  
+        }
+        @include max($lg) {
+            font-size: 25px;
+        }  
+        @include max($sm) {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }  
+    }
+    &__text {
+        line-height: 1.7;
+        font-weight: $fw300;
+        max-width: 350px;
+        margin-bottom: 43px;
+        width: 100%;
+        P {
+            @include lineClamp;
+            -webkit-line-clamp: 6;
+        }
+        @include max($md) {
+            max-width: 90%;
+        }  
+        @include max($s) {
+            margin-bottom: 100px;
+        }  
+    }
+    &__link {
+        position: relative;
+        outline: transparent;
+        transition: transform 0.3s ease-in;
+        &--moscow {
+            margin-bottom: 110px;
+            & .project__photo {
+                max-width: 540px;
+                height: 500px;
+                @include max($lg) {
+                    max-width: 360px;
+                    height: 310px;
+                } 
+                @include max($sm) {
+                    max-width: 305px;
+                    height: 280px;
+                } 
+                @include max($s) {
+                    max-width: 233px;
+                    height: 220px;
+                }
+            }
+            @include max($lg) {
+                margin-bottom: 70px;
+            } 
+            @include max($md) {
+                margin-bottom: 40px;
+            }  
+        }
+        &--tver {
+            margin-bottom: 151px;
+            @include max($lg) {
+                margin-bottom: 130px;
+            } 
+        }
+        &--tver,
+        &--rostov {
+            & .project__photo {
+                max-width: 350px;
+                height: 494px;
+                @include max($lg) {
+                    max-width: 270px;
+                    height: 380px;
+                }  
+                @include max($s) {
+                    max-width: 233px;
+                    height: 330px;
+                }
+            }
+        }
+        &--smolensk {
+            margin-bottom: 100px;
+            & .project__photo {
+                max-width: 350px;
+                height: 314px;
+                @include max($lg) {
+                    max-width: 270px;
+                    height: 240px;
+                } 
+                @include max($s) {
+                    max-width: 233px;
+                }
+            }
+            @include max($md) {
+                margin-bottom: 40px;
+            }  
+        }
+        &--kirov {
+            margin-right: auto;
+            & .project__photo {
+                max-width: 350px;
+                height: 437px;
+                @include max($lg) {
+                    max-width: 270px;
+                    height: 335px;
+                } 
+                @include max($s) {
+                    max-width: 233px;
+                    height: 290px;
+                }
+            }
+            @include max($lg) {
+                margin-right: 0;
+            } 
+        }
+        &:hover .project__images {
+            transform: scale(1.1);
+        }
+        &:focus {
+            transform: translateY(-5px);
+        }
+    }
+    &__info {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        transform: rotate(-90deg);
+        width: 0;
+        right: -17px;
+        bottom: -10px;
+    }
+    &__city,
+    &__table {
+        white-space: nowrap;
+    }
+    &__city {
+        font-weight: $fw700;
+        margin-right: 15px;
+    }
+    &__photo {
+        width: 100%;
+        overflow: hidden;
+    }
+    &__images {
+        transition: transform 0.3s ease-in;
+    }
+}

@@ -1,0 +1,64 @@
+.work{
+    margin-bottom: 70px;
+    &__title {
+        text-align: center;
+        margin-bottom: 25px;
+        @include max($lg) {
+            margin-bottom: 5px;
+            font-size: 25px;
+        }
+    }
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 40px 70px;
+        @include max($lg) {
+            grid-gap: 30px 30px;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include max($sm) {
+            grid-gap: 15px 15px;
+            grid-template-columns: 1fr;
+        }
+    }
+    &__item {
+        padding-top: 70px;
+        position: relative;
+        &:nth-child(n + 1)::before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            counter-increment: m-counter;
+            content: "0" counter(m-counter);
+            color: #B8B8B8;
+            font-size: 40px;
+            font-family: $NotoSerif;
+        }
+    }
+    &__name {
+        font-size: 18px;
+        font-weight: $fw700;
+        display: block;
+        margin-bottom: 23px;
+        @include lineClamp;
+        -webkit-line-clamp: 1;
+        @include max($lg) {
+            margin-bottom: 5px;
+        }
+    }
+    &__text {
+        line-height: 1.7;
+        p {
+            @include lineClamp;
+            -webkit-line-clamp: 4;
+            @include max($lg) {
+                @include lineClamp;
+                -webkit-line-clamp: 6;
+            }
+            @include max($md) {
+                @include lineClamp;
+                -webkit-line-clamp: 8;
+            }
+        }
+    }
+}

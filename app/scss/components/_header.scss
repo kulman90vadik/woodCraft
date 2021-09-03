@@ -1,0 +1,252 @@
+.header {
+    padding-top: 30px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        @include max($xll) {
+            margin-bottom: 5px;
+        }
+    }
+    &__btn {
+        // margin-right: 70px;
+        display: none;
+        &-item {
+            width: 23px;
+            height: 2px;
+            background-color: $black;
+            transition: transform 0.3s ease-in;
+            display: block;
+            border-radius: 2px;
+            &:not(:last-child) {
+                margin-bottom: 5px;
+            }
+            &--active {
+                background-color: #fff;
+                position: fixed;
+                transition: transform 0.3s ease-in;
+                &:nth-child(2) {
+                    display: none;
+                }
+                &:nth-child(1) {
+                    transform: rotate(45deg);
+                }
+                &:nth-child(3) {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+        @include max($lg) {
+            display: block;
+            margin-right: auto;
+            z-index: 30;
+            position: relative;
+        }
+    }
+    &__list {
+        display: flex;
+        margin-right: auto;
+        @include max($xl) {
+            margin-left: auto;
+        }
+        @include max($lg) {
+            display: none;
+        }
+    }
+    &__item {
+        &:not(:last-child) {
+            margin-right: 70px;
+            @include max($xl) {
+                margin-right: 15px;
+            }
+        }
+    }
+    &__link {
+        display: inline-block;
+        margin-bottom: 2px;
+        outline: transparent;
+        font-weight: $fw500;
+        transition: color 0.3s ease;
+        @include lineClamp;
+        -webkit-line-clamp: 2;
+        &:hover {
+            color: $green;
+        }
+        &:focus {
+            color: $accent;
+        }
+        &:active {
+            color: $grey;
+        }
+    }
+    &__tel {
+        @include max($xl) {
+            padding: 11px 14px;
+        }
+        @include max($s) {
+            font-size: 14px;
+            padding: 5px 11px;   
+        }
+    }
+    &__description {
+        display: block;
+        font-size: 10px;
+        color: $accent;
+        @include lineClamp;
+        -webkit-line-clamp: 2;
+    }
+    &__link-icon {
+        outline: transparent;
+        margin-right: 50px;
+        &:hover .header__icon {
+            fill: $black;
+        }
+        &:focus .header__icon {
+            fill: $grey;
+        }
+        &:active .header__icon {
+            fill: $accent;
+        }
+        @include max($xl) {
+            margin-right: 23px;
+        }
+        @include max($s) {
+            margin-right: 10px;     
+        }
+    }
+    &__icon {
+        width: 20px;
+        height: 20px;
+        fill: $green;
+        transition: fill 0.3s ease-in;
+    }
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include max($lg) {
+            position: absolute;
+            top: 10px;
+            left: 60px;
+        }
+        @include max($md) {
+            top: 65px;
+            left: 15px;
+            right: 15px;
+        }
+    }
+    &__navigation {
+        display: flex;
+        transition: transform 0.3s ease-in;
+        @include max($lg) {
+            position: absolute;
+            left: -60px;
+            bottom: 0;
+            top: -10px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(#000, 0.9);
+            width: 100%;
+            height: 100vh;
+            z-index: 20;
+            transform: translateX(-220%);
+        }
+        &--active {
+            transform: translateX(0);
+        }
+        @include max($md) {
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+        }
+    }
+    &__navigation__item {
+        &:not(:last-child) {
+            margin-right: 70px;
+            @include max($lg) {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    }
+    &__navigation-link {
+        text-transform: uppercase;
+        outline: transparent;
+        font-weight: $fw700;
+        font-size: 16px;
+        transition: color 0.3s ease;
+        &:hover {
+            color: $green;
+        }
+        &:focus {
+            color: $accent;
+        }
+        &:active {
+            color: $grey;
+        }
+        @include max($lg) {
+            color: #fff;
+        }
+    }
+    @include max($xll) {
+        padding-top: 10px;
+    }
+    @include max($lg) {
+        padding: 10px 0;
+    }
+}
+
+.logo {
+    outline: transparent;
+    display: block;
+    width: 120px;
+    height: 52px;
+    @include max($lg) {
+        margin-right: 15px;
+    }
+}
+
+.basket {
+    display: flex;
+    &__link {
+        position: relative;
+        transition: fill 0.3s ease-in;
+        &:hover .header__icon {
+            fill: $black;
+        }
+        &:focus .header__icon {
+            fill: $grey;
+        }
+        &:active .header__icon {
+            fill: $accent;
+        }
+    }
+    &__number {
+        position: absolute;
+        right: 10px;
+        top: -6px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: $grey;
+        z-index: -1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 10px;
+    }
+    &__icon {
+        margin-right: 20px;
+    }
+    &__corb {
+        color: $accent;
+        font-size: 13px;
+    }
+}

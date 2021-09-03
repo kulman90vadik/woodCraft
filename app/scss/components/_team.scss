@@ -1,0 +1,187 @@
+.team {
+    margin-bottom: 50px;
+    &__title {
+        max-width: 400px;
+        width: 100%;
+        margin: 0 auto 70px;
+        position: relative;
+        &::after {
+            position: absolute;
+            content: '';
+            width: 160px;
+            height: 108px;
+            @include bg;
+            background-image: url(../images/team-decor.png);
+            bottom: -45px;
+            right: 50px;
+            @include max($md) {
+                display: none;
+            }
+        }
+        @include max($md) {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+        @include max($s) {
+            font-size: 20px;
+        }
+    }
+    &__slider {
+        @include max($lg) {
+            width: 350px;
+            margin: 0 auto;
+        }
+        @include max($sm) {
+            width: 250px;
+        }
+        @include max($s) {
+            width: 230px;
+        }
+    }
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include max($lg) {
+            flex-direction: column;
+        }
+    }
+    &__images {
+        margin-right: 66px;
+        max-width: 407px;
+        height: 306px;
+        @include max($xl) {
+            max-width: 349px;
+            height: 250px;
+            margin-right: 16px;
+        }
+        @include max($lg) {
+            margin-right: 0;
+        }
+        @include max($sm) {
+            max-width: 250px;
+            height: 215px;
+        }
+        @include max($s) {
+            height: 200px;
+            max-width: 229px;
+        }
+    }
+    &__name {
+        display: block;
+        margin-bottom: 33px;
+        font-family: $NotoSerif;
+        font-size: 40px;
+        @include lineClamp;
+        -webkit-line-clamp: 1;
+        @include max($lg) {
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+        @include max($sm) {
+            font-size: 24px;
+        }
+    }
+    &__text {
+        max-width: 305px;
+        width: 100%;
+        line-height: 1.7;
+        p {
+            @include lineClamp;
+            -webkit-line-clamp: 5;
+            @include max($sm) {
+                @include lineClamp;
+            -webkit-line-clamp: 7;
+            }
+        }
+    }
+    &__prev {
+        right: 85px;
+        top: 123px;
+        @include max($lg) {
+            top: 50%;
+            transform: translateY(-50%);
+            right: -15px;
+        }
+        @include max($sm) {
+            right: -25px;
+            top: 30%;
+        }
+        @include max($s) {
+            right: -17px;
+        }
+    }
+    &__next {
+        right: 35px;
+        bottom: 50px;
+        @include max($lg) {
+            top: 50%;
+            transform: translateY(-50%);
+            left: -15px;
+        }
+        @include max($sm) {
+            left: -25px;
+            top: 30%;
+        }
+        @include max($s) {
+            left: -17px;
+        }
+    }
+    
+}
+
+
+.slick-arrow {
+    cursor: pointer;
+    display: flex;
+    position: absolute;
+    width: 71px;
+    height: 71px;
+    padding: 0;
+    border: none;
+    background-color: #f5f5f5;
+    transform: rotate(45deg);
+    z-index: 33;
+    outline: transparent;
+    transition: background-color 0.3s ease-in;
+    &:hover {
+        background-color: #4e4e4e;
+    }
+    &:hover .icon {
+        fill: #ccc;
+    }
+    &:focus {
+        background-color: #919191;
+    }
+    &:focus .icon {
+        fill: rgb(34, 34, 34);
+    }
+    &:active {
+        background-color: #cfcfcf;
+    }
+    &:active .icon {
+        fill: rgb(0, 0, 0);
+    }
+    &.slick-disabled {
+        background-color: $black;
+        .icon {
+            fill: #fff;
+        }
+    }
+    @include max($xl) {
+        width: 50px;
+        height: 50px;
+    }    
+    @include max($s) {
+        width: 35px;
+        height: 35px;
+    }    
+}
+.icon {
+    transform: rotate(-45deg);
+    fill: $black;
+    width: 40px;
+    height: 30px;
+    margin: auto;
+    transition: fill 0.3s ease-in;
+}

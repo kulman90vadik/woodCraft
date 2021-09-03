@@ -1,0 +1,142 @@
+.home-page {
+    height: 100vh;
+    margin-bottom: 25px;
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 100vh;
+        padding-bottom: 35px;
+        background-repeat: no-repeat;
+        background-position: right -120px top 50px;
+        @include max($xll) {
+            background-position: right -50px top 0px;
+            justify-content: center;
+            height: auto;
+            padding-top: 140px;
+        }
+        @include max($xl) {
+            background-size: 60%;
+            padding-top: 135px;
+        }
+        @include max($md) {
+            background-size: 0%;
+            background-position: right -50px bottom 0px;
+        }
+    }
+    &__title {
+        text-align: center;
+        font-size: 140px;
+        font-family: $NotoSerif;
+        max-width: 810px;
+        width: 100%;
+        margin-bottom: 55px;
+        line-height: 1.1;
+        @include max($xll) {
+            font-size: 60px;
+            max-width: 500px;
+            // margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        @include max($xl) {
+            font-size: 70px;
+        }
+        @include max($sm) {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+    }
+    &__description {
+        font-size: 20px;
+        display: block;
+        text-align: left;
+        @include max($sm) {
+            font-size: 16px;
+        }
+    }
+    &__text {
+        color: #a3a3a3;
+        max-width: 445px;
+        width: 100%;
+        line-height: 1.6;
+        margin-bottom: 50px;
+        p {
+            @include lineClamp;
+            -webkit-line-clamp: 3;
+            @include max($sm) {
+                @include lineClamp;
+                -webkit-line-clamp: 6;
+            }
+        }
+        @include max($xl) {
+            color: #000;
+        }
+        @include max($sm) {
+            margin-bottom: 20px;
+        }
+    }
+    @include max($xll) {
+        height: auto;
+    }
+}
+
+.popup {
+    display: flex;
+    flex-direction: column;
+    width: 303px;
+    &__link {
+        display: block;
+        position: relative;
+        margin-bottom: 20px;
+        width: 303px;
+        height: 158px;
+        @include bg;
+        outline: transparent;
+        &:hover .popup__btn{
+            background-color: $accent;
+        }
+        &:focus .popup__btn{
+            background-color: $black;
+        }
+        &:active .popup__btn{
+            background-color: $grey;
+        }
+        @include max($s) {
+            width: 290px;
+            height: 148px;        
+        }
+    }
+    &__btn {
+        padding-left: 7px;
+        display: flex;
+        border-radius: 50%;
+        width: 57px;
+        height: 57px;
+        background-color: rgba(#fff, 0.5);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        outline: transparent;
+        transition: background-color 0.3s ease-in;
+    }
+    &__icon {
+        margin: auto;
+        width: 17px;
+        height: 19px;
+        fill: #fff;
+    }
+    &__text {
+        max-width: 210px;
+        width: 100%;
+        margin-left: auto;
+        @include max($xl) {
+            max-width: 100%;
+        }
+    }
+    @include max($s) {
+        align-items: center;
+        justify-content: center;
+        width: auto;
+    }
+}

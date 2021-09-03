@@ -1,0 +1,153 @@
+.details {
+    margin-bottom: 50px;
+    &__title {
+        margin-bottom: 35px;
+        text-align: center;
+        @include max($lg) {
+            margin-bottom: 15px;
+            font-size: 25px;
+        }   
+        @include max($sm) {
+            font-size: 21px;
+        }   
+    }
+    &__subtitle {
+        margin-bottom: 50px;
+        font-weight: $fw500;
+        font-size: 18px;
+        text-align: center;
+        @include max($lg) {
+            margin-bottom: 20px;
+        }   
+    }
+    &__cards {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        @include max($lg) {
+            flex-direction: column;
+            justify-content: center;
+        } 
+        @include max($md) {
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: center;
+        }  
+    }
+    &__card{
+        max-width: 350px;
+        width: 100%;
+        @include max($lg) {
+            max-width: 100%;
+            margin-bottom: 15px;
+        }  
+        @include max($md) {
+            max-width: 350px;
+        }  
+    }
+    &__link {
+        outline: transparent;
+        display: block;
+        border: 1px solid transparent;
+        transition: transform 0.3s ease-in, background-color 0.3s ease-in;
+        &:hover {
+            transform: translateY(-7px);
+            background-color: #aabcd3;
+        }
+        &:focus {
+            border-color: #ccc;
+        }
+        &:active {
+            border-color: rgb(100, 100, 100);
+        }
+        @include max($lg) {
+            display: flex;
+        }  
+        @include max($md) {
+            display: block;
+        }  
+    }
+    &__info {
+        padding: 8px;
+    }
+    &__images {
+        height: 232px;
+        max-width: 350px;
+        width: 100%;
+        margin-bottom: 45px;
+        @include max($lg) {
+            margin-bottom: 0;
+        }  
+    }
+    &__name {
+        font-size: 24px;
+        margin-bottom: 35px;
+        line-height: 1;
+        @include lineClamp;
+        -webkit-line-clamp: 1;
+        @include max($md) {
+            margin-bottom: 15px;
+        }  
+    }
+    &__text {
+        font-weight: $fw300;
+        line-height: 1.7;
+        p {
+            @include lineClamp;
+            -webkit-line-clamp: 6;
+        }
+    }
+}
+
+.details-table {
+    margin-bottom: 25px;
+    &__item {
+        @include bg;
+        height: 417px;
+        width: 100%;
+        @include max($lg) {
+            height: 320px;
+        }   
+        @include max($md) {
+            height: 220px;
+        }   
+    }
+    & .slick-dots {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        bottom: 20px;
+        li {
+            &:not(:last-child) {
+                margin-right: 15px;
+            }
+            &.slick-active {
+                button {
+                    background-color: $black;
+                    &:hover {
+                        background-color: $black;
+                    }
+                }
+            }
+            button {
+                cursor: pointer;
+                padding: 0;
+                font-size: 0;
+                border: none;
+                width: 100px;
+                height: 4px;
+                background-color: #aabcd3;
+                outline: transparent;
+                transition: background-color 0.3s ease-in;
+                &:hover {
+                    background-color: #4a5a6e;
+                }
+                @include max($sm) {
+                    width: 55px;
+                }  
+            }
+        }
+    }
+}
+

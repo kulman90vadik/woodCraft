@@ -1,0 +1,10 @@
+.map {
+    height: 445px;
+    width: 100%;
+    @include max($lg) {
+        height: 370px;
+    }
+    @include max($md) {
+        height: 280px;
+    }
+}
